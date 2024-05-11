@@ -1,10 +1,14 @@
-import { prototype } from "html-webpack-plugin";
+import {PropTypes } from "prop-types";
 import React from "react"
 
 
 export const Card=(props)=>{
     return (  
-    <div className="card m-5">
+         
+         <div className="col-sm-12 col-md-6 col-lg-3">
+        <article className="card" id="card_margin">
+
+            
     <img className="card-img-top" src={props.imageUrl} alt="Card image cap" />
     <div className="card-body">
         <h5 className="card-title">{props.title}</h5>
@@ -13,14 +17,14 @@ export const Card=(props)=>{
             {props.buttonLabel}
         </a>
     </div>
+        </article>
 </div>
     );
 }
-Card.prototype={
-  imageUrl: prototype.string,
-  title: prototype.string,
-  description: prototype.string,
-  buttonUrl: prototype.string,
-  buttonLabel: prototype.string
-}
-
+Card.propTypes = {
+    imageUrl: PropTypes.string,
+    title: PropTypes.string,
+    description: PropTypes.string,
+    buttonUrl: PropTypes.string,
+    buttonLabel: PropTypes.string
+  }
